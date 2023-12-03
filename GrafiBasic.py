@@ -1,3 +1,10 @@
+"""
+Curso Python empresa
+
+Autor: José Antonio Calvo López
+Fecha: Noviembre de 2023
+"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 
