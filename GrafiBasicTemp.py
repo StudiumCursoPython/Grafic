@@ -1,9 +1,4 @@
-"""
-Curso Python empresa
-
-Autor: José Antonio Calvo López
-Fecha: Noviembre de 2023
-"""
+# https://aprendeconalf.es/docencia/python/manual/matplotlib/
 
 import matplotlib.pyplot as plt
 
