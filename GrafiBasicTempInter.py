@@ -16,7 +16,7 @@ def actualizar_error(mensaje):
     etiqueta_error.config(text=mensaje)
     # Limpia el mensaje después de 5000 ms (5 segundos)
     ventana.after(5000, limpiar_error)  
-
+    
 # Función para validar y convertir las entradas de temperatura
 def temperaturas(entrada):
     try:
@@ -40,12 +40,12 @@ def dibujar_grafica():
         ax.plot(dias, temperaturas_barcelona, label='Barcelona')
         ax.legend(loc='upper right')
         ax.set_title("Gráfica básica del tiempo")
-
+        # Intregación de la figura fig con Tkinter
         canvas = FigureCanvasTkAgg(fig, master=ventana)  
         widget_canvas = canvas.get_tk_widget()
         widget_canvas.grid(row=3, column=0, columnspan=4)
-
-        actualizar_error("")  # Limpia cualquier mensaje de error anterior
+        # Limpia cualquier mensaje de error anterior
+        actualizar_error("")  
 
     except ValueError as e:
         actualizar_error(str(e))
@@ -82,4 +82,16 @@ ventana.iconphoto(True,icono)
 ventana.mainloop()
 
 
+'''
+# Se puede hacer el método temperatura() de la siguiente forma también
 
+def temperaturas(entrada):
+    try:
+        valores = list(map(float, entrada.split(',')))
+        if len(valores) != 7:
+            return None, "Error: Debe ingresar exactamente 7 temperaturas."
+        return valores, None
+    except ValueError:
+        return None, "Error: Ingrese valores numéricos separados por comas."
+
+'''
