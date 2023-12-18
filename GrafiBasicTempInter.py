@@ -1,8 +1,11 @@
 # https://aprendeconalf.es/docencia/python/manual/matplotlib/
 
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from tkinter import PhotoImage
 import tkinter as tk
 import matplotlib.pyplot as plt
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import os
+import sys
 
 # Función para limpiar el mensaje de error
 def limpiar_error():
@@ -50,6 +53,14 @@ def dibujar_grafica():
 # Crear la ventana principal
 ventana = tk.Tk()
 ventana.title("Temperaturas de Madrid y Barcelona")
+ventana.eval('tk::PlaceWindow . center')
+ventana.resizable(False, False)
+
+# Obtener la ruta de acceso a los recursos incluidos en el archivo
+ruta_recursos = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+
+# Crear la ventana de la aplicación
+icono = PhotoImage(file=os.path.join(ruta_recursos, "Studium.png"))
 
 etiqueta_madrid = tk.Label(ventana, text=" Introduce 7 Temperaturas para Madrid (separadas por comas):")
 etiqueta_madrid.grid(row=0, column=0, sticky="w")
@@ -67,6 +78,7 @@ boton_dibujar.grid(row=2, column=0, columnspan=2)
 etiqueta_error = tk.Label(ventana, text="", fg="red")
 etiqueta_error.grid(row=2, column=2, columnspan=2)
 
+ventana.iconphoto(True,icono)
 ventana.mainloop()
 
 
