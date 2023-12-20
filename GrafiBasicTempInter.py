@@ -20,8 +20,8 @@ def actualizar_error(mensaje):
 # Función para validar y convertir las entradas de temperatura
 def temperaturas(entrada):
     try:
-        # Convierte la entrada en una lista de floats
-        return list(map(float, entrada.split(',')))
+        # Convierte la entrada en una lista de enteros
+        return list(map(int, entrada.split(',')))
     except ValueError:
         raise ValueError("Ingresar 7 números separados por comas.")
 
@@ -87,7 +87,7 @@ ventana.mainloop()
 
 def temperaturas(entrada):
     try:
-        valores = list(map(float, entrada.split(',')))
+        valores = list(map(int, entrada.split(',')))
         if len(valores) != 7:
             return None, "Error: Debe ingresar exactamente 7 temperaturas."
         return valores, None
