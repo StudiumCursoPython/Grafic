@@ -1,3 +1,12 @@
+""" 
+Curso Python empresa de 'Lenguaje de Programación Python'
+
+Autor: José Antonio Calvo López
+
+Fecha: Noviembre 2023
+
+"""
+
 # https://aprendeconalf.es/docencia/python/manual/matplotlib/
 
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
